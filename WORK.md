@@ -1,0 +1,40 @@
+## 11/02 part-3
+
+## バッジを廃止・フォントスタイルを斜体に変更
+```html
+<span class="hero-badge" style="box-sizing: border-box; margin: 0; display: inline-block; padding: 0.35rem 1.1rem; margin-bottom: 1.25rem; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em; color: #f3e5ab; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.35); border-radius: 999px;">OFFICE TOTAL SOLUTION</span>
+```
+
+[制約]
+- *SEO対策の観点から提案があれば行うこと*
+
+## 11/02 part-2
+*スタイリングの改修*
+- *リファクタリング*
+- [dev/index.html](dev/index.html)
+
+*現行*
+*HTMLファイル内に`<style>`を呼び出しCSSのコーディングしている*
+
+*改修内容*
+*サンプルコードを参考にCSSをすべてタグインラインにリファクタリング*
+*サンプルコード*
+```html
+<h1 style="{....}"> </h1>
+```
+
+[制約]
+- *まずはすべてのすたいりんぐがタグインラインでリファクタリング可能か調査すること*
+
+## 11/02 part-1
+*スタイリングの改修*
+- *対象ファイル*
+- [dev/index.html](dev/index.html)
+    **テクスチャ:** Web全体の背景には、フラットな黒（#000000）ではなく、微細なノイズまたはカーボン調のダークグレー（#0a0b0e）を敷くことで、ゴールドとシルバーの輝きが一層引き立たせてほしい。 
+    *セクション「サービス」に複合機・PC、プリンター,ビジネスフォンの画像を作成*
+　
+　[制約]
+　- *今回は作業用意は不要*
+　- *Geminiに渡す仕様書の作成があなたのスコープです。
+　- *画像はGeminiに作成させるので作成用のプロンプトを用意してください*
+　- *## 　2026/10/27 part-1を参考資料に仕様書作成を進めてください*
