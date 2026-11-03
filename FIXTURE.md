@@ -1,183 +1,122 @@
-# ===========================
-*あなたはプロのWeb製作者です。ホームページやWebデザインを得意領域としているので
-エージェントオーケストレータの私に協力してください*
-- *会社名は情報漏洩対策としてXXXとします*
-[制約]
-*各コンポーネントは骨子です。スタイリングの選定はあなたの裁量が大きいですがプロンプトで明示的に示したルールは必ず守ってください*
-# ===========================
+# FIXTURE: 業務オートメーション・DX 専用セクション
 
-## 今回の顧客
-- 複合機販売の大手代理販売店
-*ビジネスモデル*
-- *大手メーカの製造している複合機を提案・導入することで発生するマージンでマネタイズする中小企業*
-- *今回は集客のためにホームページを私に依頼*
+## 概要
+`index.html` のサービスセクション「業務オートメーション・DX」カードを、専用の全幅セクションとして昇格させたデザイン案。
 
-### ページコンテンツ
+- **対象ファイル:** `dev/index.html`
+- **使用画像:** `./static/img/dx_service.jpg`（背景）
+- **見出しテキスト:** カードの `<h3>` をそのまま使用
+- **説明文:** カードの `<div>` テキストをそのまま使用
 
-## *ヘッダー*
- - *ヘッダーリンク*
+---
 
-　*ヘッダー*
-  [*項目仕様*]
- *サービス*
-   - *クリック時、セクション「サービス」に移動*
- *会社案内*
-  - *クリック時、セクション「会社概要」に移動*
-*お問い合わせ*
-- *クリック時セクション「お問い合わせ」に移動*
+## 1. 追加セクション HTML
 
-	
-[制約]
-  *aタグを使用*
-  *リンクのテキストには[*項目仕様*]の各テキストを使用する。*
+サービスセクション閉じタグ直後・会社案内セクションの前に挿入する。
 
-  *PC画面レイアウト*
-  #### リンクが横並びになったヘッダーリンク方式
-  ```html
-  <header>
-  合資会社 XXXXXXX
-   <div class="slide-menu header-menu">
-    <nav id =”header-items”>
-       <a class ="header-item" href="company-service">サービス</a>
-       <a class ="header-item" href="company-info">会社案内</a>
-       <a class ="header-item" href="company-qa">お問い合わせ</a>
-    </nav>
-   </div>
-  </header>
-  ```
-
-*モバイル画面*
-#### スライド＆回転メニュー 
 ```html
- <header>
-  合資会社 XXXXXXX
- </header>
-<input id = "test_max_length" type="text" maxlength = "1" onClick="menuEvent()">
-<!-- 開閉ボタン -->
-<button id="menu-toggle" aria-label="メニューを開く">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
+<!-- セクション「業務オートメーション・DX」 -->
+<section id="company-dx" style="box-sizing: border-box; position: relative; width: 100%; min-height: 480px; overflow: hidden; border-top: 1px solid rgba(212, 175, 55, 0.35); border-bottom: 1px solid rgba(212, 175, 55, 0.35);">
 
-<nav class="slide-menu header-menu">
-  <ul id =”header-items”>
-    <li class ="header-item" ><a href="company-service">サービス</a></li>
-    <li class ="header-item" ><a href="company-info">会社案内</a></li>
-    <li class ="header-item" ><a href="company-qa">お問い合わせ</a></li>
-  </ul>
-</nav>
+  <!-- 背景画像レイヤー -->
+  <div style="box-sizing: border-box; position: absolute; inset: 0; background-image: url('./static/img/dx_service.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 0;"></div>
+
+  <!-- オーバーレイ（可読性確保 + ブランドカラー） -->
+  <div style="box-sizing: border-box; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10, 11, 14, 0.88) 0%, rgba(10, 11, 14, 0.72) 50%, rgba(20, 15, 5, 0.82) 100%); z-index: 1;"></div>
+
+  <!-- コンテンツ -->
+  <div style="box-sizing: border-box; position: relative; z-index: 2; max-width: 1440px; margin: 0 auto; padding: 7rem 2rem; display: flex; flex-direction: column; align-items: center;">
+
+    <!-- セクションラベル（英字） -->
+    <p style="box-sizing: border-box; margin: 0 0 1rem 0; padding: 0; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: #d4af37; text-transform: uppercase; text-align: center;">Business Automation &amp; Digital Transformation</p>
+
+    <!-- メイン見出し（カードh3テキストをそのまま使用） -->
+    <h2 style="box-sizing: border-box; margin: 0 0 1.5rem 0; padding: 0 0 1.1rem 0; font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; color: #f3e5ab; letter-spacing: 0.08em; text-align: center; position: relative;">
+      業務オートメーション・DX
+      <span style="box-sizing: border-box; display: block; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: linear-gradient(90deg, transparent, #d4af37, transparent);"></span>
+    </h2>
+
+    <!-- 説明文（カードのdivテキストをそのまま使用） -->
+    <p style="box-sizing: border-box; margin: 0 auto 3rem; padding: 0; max-width: 680px; font-size: 1.12rem; color: #c0c0c8; line-height: 1.9; text-align: center; letter-spacing: 0.04em;">
+      煩雑化した業務フローと人手不足の問題をデジタルトランスフォーメーションで解決。現場のコンサルティング・開発一手に担います。
+    </p>
+
+    <!-- CTAボタン -->
+    <a class="dx-cta" href="#company-qa" style="box-sizing: border-box; margin: 0; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2.6rem; background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%); color: #0a0a0c; font-size: 1.02rem; font-weight: 700; letter-spacing: 0.1em; border-radius: 6px; box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4); transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);">
+      DX導入のご相談はこちら
+    </a>
+
+  </div>
+</section>
 ```
-	  
-    
-```javascript
-<script>
-function menuEvent(){
-  const menuToggle = document.getElementById('menu-toggle');
-  const slideMenu = document.getElementById('slide-menu');
-  menuToggle.addEventListener('click', () => {
-  // ボタンとメニューの両方にクラスをトグル（交互に付け外し）する
-  menuToggle.classList.toggle('is-open');
-  slideMenu.classList.toggle('is-open');
-  const test = document.getElementById('test_max_length');
-  if (test.value > 1){
-      throw Error('eeeeee')
-   }
-});
+
+---
+
+## 2. `<style>` ブロックへの追加
+
+既存の `<style>` ブロック内（`#company-qa input[type="submit"]:hover` の後など）に追加する。
+
+```css
+/* DX セクション CTAボタン hover */
+.dx-cta:hover {
+  color: #0a0a0c !important;
+  transform: translateY(-2px) !important;
+  background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 100%) !important;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45) !important;
 }
-</script>
+
+/* DX セクション モバイル対応 */
+@media (max-width: 960px) {
+  #company-dx > div:last-child {
+    padding: 4rem 1.5rem !important;
+  }
+}
 ```
 
+---
 
+## 3. ナビゲーション追加（任意）
 
-### *セクション「サービス」*
-- *複合機*
-     - *印刷・コピー・スキャンの機能を一台に集約した複合機*
-- *ビジネスフォン*
-	 - *オフィスのコミュニケーションを効率化するビジネスフォン。内線・転送・保留などの基本機能はもちろん、電話応対の履歴管理や会議通話機能も搭載。* 
-- *PC・プリンター*
-     - *業務内容やオフィス環境に合わせて、最適なパソコンやプリンターを提案。高速処理や高画質印刷など、効率的に作業を進められる性能を備える*
+`<ul id="header-items">` 内の既存 `<li>` の後ろに追加する。
 
 ```html
-<main id= "company-service">
-  <div>
-  <div>複合機</div>
-  <img src="maluti.png" alt="複合機の画像">
-  <div>印刷・コピー・スキャンの機能を一台に集約した複合機</div>
-  </div>
-  <div>
-  <div>ビジネスフォン</div>
-  <img src= "phone.png" alt="ビジネスフォンの画像" >
-  <div>オフィスのコミュニケーションを効率化するビジネスフォン。内線・転送・保留などの基本機能はもちろん、電話応対の履歴管理や会議通話機能も搭載。
-  </div>
-  </div>
-  <div>
-  <div>PC・プリンター</div>
-  <img src= "pc-printer.png" alt="pc・プリンタの画像" > 
-  <div>業務内容やオフィス環境に合わせて、最適なパソコンやプリンターを提案。高速処理や高画質印刷など、効率的に作業を進められる性能を備える</div>
-  </div>
-</main>
+<li class="header-item" style="box-sizing: border-box; margin: 0; padding: 0; position: relative; font-size: 1rem; font-weight: 500; color: #e2e2e8; letter-spacing: 0.06em; list-style: none;">
+  <a class="header-item" href="#company-dx" style="box-sizing: border-box; margin: 0; position: relative; font-size: 1rem; font-weight: 500; letter-spacing: 0.06em; list-style: none; text-decoration: none; transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); display: inline-block; padding: 0.4rem 0; color: inherit;">DX・自動化</a>
+</li>
 ```
 
-### セクション「会社案内」
-```html
-<ul id= "company-info">
-<li class="info-items" > ここに住所</li>
-<li class="info-items">  連絡先</li>
-<li class="info-items"> 社長の名前</li>
-</ul>
-```
+---
 
+## 4. サービスグリッドの既存カード処理
 
-### *セクション「お問い合わせ」*
+`main#company-service` 内の「業務オートメーション・DX」カード（4枚目 `<div>`）は専用セクション昇格に伴い **削除**する。
+
+削除対象（`index.html` の339〜351行目）:
 
 ```html
-<div id = "company-qa">
-<form action="alert('ここを押すとメールが届く')"  method="POST">
-<label for="order">
-<select name="order-items" id="order"> 
-<option class = "order-item" value="materials">製品資料の取り寄せ</option> 
-<option value="quotation">お見積もりの相談</option> 
-<option value="example">その他・何を相談して良いかわからないが話を聞きたい</option>
-</select>
-</label>
-<label for="qa-field" >
-<textarea id="qa-field" name = "qa-field-detail" rows="5" col="30" >
-</textarea>
-</label>
-<intput type= "submit" value="送信"/>
-</form>
+<!-- 項目　「業務オートメーション化・DX化を入れる」-->
+<div style="...">
+  <h3 ...>業務オートメーション・DX</h3>
+  <img src="./static/img/dx_service.jpg" ...>
+  <div ...>煩雑化した業務フロー...</div>
 </div>
 ```
 
+削除後、サービスグリッドは3列3アイテムで完結する。
 
-### フッタ-
+---
 
-```html
-<footer><small>@Copyright2026</small></footer>
-```
+## 5. マーケター視点からの提案
 
-
-
-# スタイリング
-## 方向性
-- *黒を基調としたスタイリッシュなイメージ*
-## テキスト
-- *大きな見出し->ゴールド*
-- *文字の色 -> シルバー*
-
-[コーディング規約]
-*CSS*
-- *インラインタグ*
-*javascript*
-- *スクリプトタグ*
-- *バニラJS*
-
-[ファイル出力]
-*index.htmlを作成・コーディング*
-[C:\Users\User\myapp\dev\index.html](C:\Users\User\myapp\dev\index.html)
+| #   | 提案                                          | 理由                                                          |
+| --- | ------------------------------------------- | ----------------------------------------------------------- |
+| 1   | **CTAを独立セクション内に配置（実装済み）**                   | DXは「何から始めればいいか分からない」層が多く、課題感が顕在化した直後の接触ポイントで相談CTA訴求が最も効果が出る |
+| 2   | **英字キャプション「Business Automation…」を追加（実装済み）** | サービスの専門性と格式を視覚的に付加。欧文フォントの細さがゴールド×和文見出しのコントラストをさらに際立てる      |
+| 3   | **ナビに「DX・自動化」を追加（任意）**                      | DX起点で検索してランディングしたユーザーが即座に目的セクションへ遷移できる。内部リンク強化でSEOにも寄与      |
+| 4   | **サービスグリッドから削除（推奨）**                        | 専用セクションとの重複をなくし、サービス概覧3列を均等に保つ。情報の階層が整理されてユーザーの認知負荷が下がる     |
 
 [制約]
-- *今回はサンプルとしてクライアントに見せますが、案件は確約しているので、品質の担保は必須です。*
-- *imgタグに入る画像は今後作成するのでいったん不要。とりあえず必要領域として420x420で確保しておいてください。*
-- *モバイルレスポンシブも今後詰めていきますので最低限で構いません。スライド・回転メニューのモバイルレスポンしブは最低限キープしつつレイアウトに大きな崩れがないように*
+- *この成果物を使用所です。これを使用してコーディングができます。*
+
+
+

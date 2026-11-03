@@ -6,6 +6,64 @@
   <meta name="description" content="北九州市八幡西区のオフィス機器導入">
   <title>北九州市のオフィス機器販売 | 複合機・PCソリューション・プリンタの導入 
     | オフィス環境の自動化 | オフィストータルソリューション</title>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "合資会社 テクノスペース",
+      "description": "北九州市を中心に、複合機・ビジネスフォン・PCソリューションの導入から保守・業務自動化（DX）まで、ビジネスを最適にするオフィス環境をご提案。",
+      "telephone": "093-692-1761",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "JP",
+        "addressRegion": "福岡県",
+        "addressLocality": "北九州市八幡西区",
+        "streetAddress": "大浦1-12-26"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "福田 智"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "北九州市"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "オフィス機器・DXソリューション",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "複合機"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ビジネスフォン"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "PC・プリンター"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "業務オートメーション・DX"
+            }
+          }
+        ]
+      }
+    }
+  </script>
   <style>
     /* タグインライン(style属性)では記述できない擬似要素・擬似クラス・状態クラス・メディアクエリのみ定義 */
     :root {
@@ -96,6 +154,14 @@
       transform: translateY(-2px) !important;
       background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%) !important;
       box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45) !important;
+    }
+
+    /* DX セクション CTAボタン hover */
+    .dx-cta:hover {
+      color: #0a0a0c !important;
+      transform: translateY(-2px) !important;
+      background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 100%) !important;
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45) !important;
     }
 
     /* JS連動の状態クラス (.is-open) */
@@ -195,6 +261,11 @@
       #company-qa {
         padding: 2rem 1.5rem !important;
       }
+
+      /* DX セクション モバイル対応 */
+      #company-dx > div:last-child {
+        padding: 4rem 1.5rem !important;
+      }
     }
   </style>
 </head>
@@ -215,6 +286,7 @@
     <nav id="slide-menu" class="slide-menu header-menu" aria-label="メインナビゲーション" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;">
       <ul id="header-items" style="box-sizing: border-box; display: flex; align-items: center; gap: 2.5rem; list-style: none; margin: 0; padding: 0;">
         <li class="header-item" style="box-sizing: border-box; margin: 0; padding: 0; position: relative; font-size: 1rem; font-weight: 500; color: #e2e2e8; letter-spacing: 0.06em; list-style: none;"><a class="header-item" href="#company-service" style="box-sizing: border-box; margin: 0; position: relative; font-size: 1rem; font-weight: 500; letter-spacing: 0.06em; list-style: none; text-decoration: none; transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); display: inline-block; padding: 0.4rem 0; color: inherit;">サービス</a></li>
+        <li class="header-item" style="box-sizing: border-box; margin: 0; padding: 0; position: relative; font-size: 1rem; font-weight: 500; color: #e2e2e8; letter-spacing: 0.06em; list-style: none;"><a class="header-item" href="#company-dx" style="box-sizing: border-box; margin: 0; position: relative; font-size: 1rem; font-weight: 500; letter-spacing: 0.06em; list-style: none; text-decoration: none; transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); display: inline-block; padding: 0.4rem 0; color: inherit;">DX・自動化</a></li>
         <li class="header-item" style="box-sizing: border-box; margin: 0; padding: 0; position: relative; font-size: 1rem; font-weight: 500; color: #e2e2e8; letter-spacing: 0.06em; list-style: none;"><a class="header-item" href="#company-info" style="box-sizing: border-box; margin: 0; position: relative; font-size: 1rem; font-weight: 500; letter-spacing: 0.06em; list-style: none; text-decoration: none; transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); display: inline-block; padding: 0.4rem 0; color: inherit;">会社案内</a></li>
         <li class="header-item" style="box-sizing: border-box; margin: 0; padding: 0; position: relative; font-size: 1rem; font-weight: 500; color: #e2e2e8; letter-spacing: 0.06em; list-style: none;"><a class="header-item" href="#company-qa" style="box-sizing: border-box; margin: 0; position: relative; font-size: 1rem; font-weight: 500; letter-spacing: 0.06em; list-style: none; text-decoration: none; transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); display: inline-block; padding: 0.4rem 0; color: inherit;">お問い合わせ</a></li>
       </ul>
@@ -226,9 +298,11 @@
 
   <!-- ヒーローセクション -->
   <section class="hero-banner" style="box-sizing: border-box; max-width: 1360px; margin: 0 auto; padding: 5rem 2rem 3.5rem; text-align: center; border-bottom: 1px solid rgba(192, 192, 200, 0.18);">
-    <span class="hero-badge" style="box-sizing: border-box; margin: 0; display: inline-block; padding: 0.35rem 1.1rem; margin-bottom: 1.25rem; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em; color: #f3e5ab; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.35); border-radius: 999px;">OFFICE TOTAL SOLUTION</span>
-    <h1 style="box-sizing: border-box; margin: 0; padding: 0; color: #d4af37; font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif; letter-spacing: 0.08em; font-weight: 700; font-size: clamp(1.85rem, 3.6vw, 2.85rem); background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa820a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.25rem; line-height: 1.4;">オフィス環境の最適化を、確かな技術と提案力で。</h1>
-    <p style="box-sizing: border-box; padding: 0; font-size: 1.05rem; color: #c0c0c8; max-width: 740px; margin: 0 auto 2.25rem;">複合機・ビジネスフォン・PCソリューションの導入から保守まで、ビジネスを最適にするオフィス環境をご提案。</p>
+    <h1 style="box-sizing: border-box; margin: 0 0 1.25rem 0; padding: 0; color: #d4af37; font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif; letter-spacing: 0.08em; font-weight: 700; font-size: clamp(1.85rem, 3.6vw, 2.85rem); line-height: 1.4;">
+      <span style="box-sizing: border-box; margin: 0 0 1.25rem 0; padding: 0; display: block; font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; font-size: 0.82rem; font-weight: 600; font-style: italic; letter-spacing: 0.12em; color: #f3e5ab; line-height: 1.75;">OFFICE TOTAL SOLUTION — 北九州市の複合機・ビジネスフォン・PC導入・業務DX</span>
+      <span style="box-sizing: border-box; margin: 0; padding: 0; display: inline-block; background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa820a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">オフィス環境の最適化を、確かな実績と提案で。</span>
+    </h1>
+    <p style="box-sizing: border-box; padding: 0; font-size: 1.05rem; color: #c0c0c8; max-width: 740px; margin: 0 auto 2.25rem;">北九州市を中心に、複合機・ビジネスフォン・PCソリューションの導入から保守・業務自動化まで、ビジネスを最適にするオフィス環境をご提案。</p>
     <a class="hero-cta" href="#company-qa" style="box-sizing: border-box; margin: 0; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.95rem 2.4rem; background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%); color: #0a0a0c; font-size: 1.02rem; font-weight: 700; letter-spacing: 0.08em; border-radius: 6px; box-shadow: 0 4px 18px rgba(212, 175, 55, 0.3); transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);">無料お見積もり・ご相談はこちら</a>
   </section>
 
@@ -237,7 +311,7 @@
     <h2 class="section-heading" style="box-sizing: border-box; margin: 0; padding: 0; color: #d4af37; font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif; letter-spacing: 0.08em; font-weight: 700; font-size: 1.95rem; text-align: center; margin-bottom: 3rem; position: relative; padding-bottom: 0.85rem;">サービス</h2>
     <main id="company-service" style="box-sizing: border-box; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.25rem; max-width: 1400px; margin: 0 auto; padding: 1rem 0 2rem;">
       <div style="box-sizing: border-box; margin: 0; color: #c0c0c8; background: #1a1a20; border: 1px solid rgba(192, 192, 200, 0.18); border-top: 3px solid #d4af37; border-radius: 10px; padding: 1.75rem; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1.35rem; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5); transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);">
-        <div style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif; font-size: 1.5rem; font-weight: 700; color: #d4af37; letter-spacing: 0.08em; text-align: center; width: 100%; padding-bottom: 0.65rem; border-bottom: 1px solid rgba(192, 192, 200, 0.18);">複合機</div>
+        <h3 style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif; font-size: 1.5rem; font-weight: 700; color: #d4af37; letter-spacing: 0.08em; text-align: center; width: 100%; padding-bottom: 0.65rem; border-bottom: 1px solid rgba(192, 192, 200, 0.18);">複合機</h3>
         <img
           src="./static/img/maluti.png"
           alt="複合機の画像"
@@ -250,7 +324,7 @@
         <div style="box-sizing: border-box; margin: 0; padding: 0; font-size: 0.98rem; color: #c0c0c8; line-height: 1.8; width: 100%; flex-grow: 1;">印刷・コピー・スキャンの機能を一台に集約した複合機</div>
       </div>
       <div style="box-sizing: border-box; margin: 0; color: #c0c0c8; background: #1a1a20; border: 1px solid rgba(192, 192, 200, 0.18); border-top: 3px solid #d4af37; border-radius: 10px; padding: 1.75rem; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1.35rem; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5); transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);">
-        <div style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif; font-size: 1.5rem; font-weight: 700; color: #d4af37; letter-spacing: 0.08em; text-align: center; width: 100%; padding-bottom: 0.65rem; border-bottom: 1px solid rgba(192, 192, 200, 0.18);">ビジネスフォン</div>
+        <h3 style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif; font-size: 1.5rem; font-weight: 700; color: #d4af37; letter-spacing: 0.08em; text-align: center; width: 100%; padding-bottom: 0.65rem; border-bottom: 1px solid rgba(192, 192, 200, 0.18);">ビジネスフォン</h3>
         <img
           src="./static/img/phone.png"
           alt="ビジネスフォンの画像"
@@ -263,7 +337,7 @@
         <div style="box-sizing: border-box; margin: 0; padding: 0; font-size: 0.98rem; color: #c0c0c8; line-height: 1.8; width: 100%; flex-grow: 1;">オフィスのコミュニケーションを効率化するビジネスフォン。内線・転送・保留などの基本機能はもちろん、電話応対の履歴管理や会議通話機能も搭載。</div>
       </div>
       <div style="box-sizing: border-box; margin: 0; color: #c0c0c8; background: #1a1a20; border: 1px solid rgba(192, 192, 200, 0.18); border-top: 3px solid #d4af37; border-radius: 10px; padding: 1.75rem; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1.35rem; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5); transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);">
-        <div style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif; font-size: 1.5rem; font-weight: 700; color: #d4af37; letter-spacing: 0.08em; text-align: center; width: 100%; padding-bottom: 0.65rem; border-bottom: 1px solid rgba(192, 192, 200, 0.18);">PC・プリンター</div>
+        <h3 style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif; font-size: 1.5rem; font-weight: 700; color: #d4af37; letter-spacing: 0.08em; text-align: center; width: 100%; padding-bottom: 0.65rem; border-bottom: 1px solid rgba(192, 192, 200, 0.18);">PC・プリンター</h3>
         <img
           src="./static/img/pc-printer.png"
           alt="pc・プリンタの画像"
@@ -276,6 +350,40 @@
         <div style="box-sizing: border-box; margin: 0; padding: 0; font-size: 0.98rem; color: #c0c0c8; line-height: 1.8; width: 100%; flex-grow: 1;">業務内容やオフィス環境に合わせて、最適なパソコンやプリンターを提案。高速処理や高画質印刷など、効率的に作業を進められる性能を備える</div>
       </div>
     </main>
+  </section>
+
+  <!-- セクション「業務オートメーション・DX」 -->
+  <section id="company-dx" style="box-sizing: border-box; position: relative; width: 100%; min-height: 480px; overflow: hidden; border-top: 1px solid rgba(212, 175, 55, 0.35); border-bottom: 1px solid rgba(212, 175, 55, 0.35);">
+
+    <!-- 背景画像レイヤー -->
+    <div style="box-sizing: border-box; position: absolute; inset: 0; background-image: url('./static/img/dx_service.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 0;"></div>
+
+    <!-- オーバーレイ（可読性確保 + ブランドカラー） -->
+    <div style="box-sizing: border-box; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10, 11, 14, 0.88) 0%, rgba(10, 11, 14, 0.72) 50%, rgba(20, 15, 5, 0.82) 100%); z-index: 1;"></div>
+
+    <!-- コンテンツ -->
+    <div style="box-sizing: border-box; position: relative; z-index: 2; max-width: 1440px; margin: 0 auto; padding: 7rem 2rem; display: flex; flex-direction: column; align-items: center;">
+
+      <!-- セクションラベル（英字） -->
+      <p style="box-sizing: border-box; margin: 0 0 1rem 0; padding: 0; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: #d4af37; text-transform: uppercase; text-align: center;">Business Automation &amp; Digital Transformation</p>
+
+      <!-- メイン見出し（カードh3テキストをそのまま使用） -->
+      <h2 style="box-sizing: border-box; margin: 0 0 1.5rem 0; padding: 0 0 1.1rem 0; font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; color: #f3e5ab; letter-spacing: 0.08em; text-align: center; position: relative;">
+        業務オートメーション・DX
+        <span style="box-sizing: border-box; display: block; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: linear-gradient(90deg, transparent, #d4af37, transparent);"></span>
+      </h2>
+
+      <!-- 説明文（カードのdivテキストをそのまま使用） -->
+      <p style="box-sizing: border-box; margin: 0 auto 3rem; padding: 0; max-width: 680px; font-size: 1.12rem; color: #c0c0c8; line-height: 1.9; text-align: center; letter-spacing: 0.04em;">
+        煩雑化した業務フローと人手不足の問題をデジタルトランスフォーメーションで解決。現場のコンサルティング・開発一手に担います。
+      </p>
+
+      <!-- CTAボタン -->
+      <a class="dx-cta" href="#company-qa" style="box-sizing: border-box; margin: 0; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2.6rem; background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%); color: #0a0a0c; font-size: 1.02rem; font-weight: 700; letter-spacing: 0.1em; border-radius: 6px; box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4); transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);">
+        DX導入のご相談はこちら
+      </a>
+
+    </div>
   </section>
 
   <!-- セクション「会社案内」 -->
@@ -305,9 +413,10 @@
         <label for="order" style="box-sizing: border-box; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.98rem; font-weight: 600; color: #f3e5ab; letter-spacing: 0.04em;">
           お問い合わせ項目
           <select name="order-items" id="order" style="box-sizing: border-box; margin: 0; width: 100%; padding: 1rem 1.2rem; background: #141418; border: 1px solid rgba(192, 192, 200, 0.18); border-radius: 6px; color: #e2e2e8; font-size: 1rem; font-weight: 400; font-family: inherit; transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); outline: none;">
-            <option class="order-item" value="materials" style="box-sizing: border-box; margin: 0; padding: 0; background: #141418; color: #e2e2e8;">製品資料の取り寄せ</option>
+            <option value="example" style="box-sizing: border-box; margin: 0; padding: 0; background: #141418; color: #e2e2e8;">業務自動化の相談</option>
             <option value="quotation" style="box-sizing: border-box; margin: 0; padding: 0; background: #141418; color: #e2e2e8;">お見積もりの相談</option>
-            <option value="example" style="box-sizing: border-box; margin: 0; padding: 0; background: #141418; color: #e2e2e8;">その他・何を相談して良いかわからないが話を聞きたい</option>
+            <option class="order-item" value="materials" style="box-sizing: border-box; margin: 0; padding: 0; background: #141418; color: #e2e2e8;">製品資料の取り寄せ</option>
+            <option value="example" style="box-sizing: border-box; margin: 0; padding: 0; background: #141418; color: #e2e2e8;">その他</option>
           </select>
         </label>
         <label for="qa-field" style="box-sizing: border-box; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.98rem; font-weight: 600; color: #f3e5ab; letter-spacing: 0.04em;">
