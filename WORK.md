@@ -1,3 +1,48 @@
+## 11/02 part-5
+## =============
+[ROLE]
+### 以下の要件から画面レイアウト仕様書を作成して
+## =============
+
+## *フッターメニューの追加*
+*フッターエリアにヘッダー同様のメニューを用意*
+
+[制約]
+*ここにオーケストレーションに開発おける工程分担とその詳細を定義する*
+*仕様の作成を行うモデル「メインエージェント」*
+   - *Gemini Argon High*
+   - [仕様規約]
+   - *既存のヘッダーメニューソースコードを利用すること*
+	*流用の際、headerから始まる接頭辞をfooter-という接頭辞に変更すること*
+	*aria-label="メインナビゲーション"は"フッターナビゲーション"に変更*
+	*仕様は[dev/FIXTURE.md](dev/FIXTURE.md)にタイトル「`# FIXTURE:フッターメニュー仕様書`」として出すこと*
+*サブエージェントから作業完了を受けたらコミット・プッシュを行うこと*	
+
+*実装を行うモデル*
+   - *サブエージェント Gemini Flash Lite High*
+   - [dev/FIXTURE.md](dev/FIXTURE.md)の`# FIXTURE:フッターメニュー仕様書`の内容を実装すること
+   - *実装完了後メインエージェントに作業完了の報告を行うこと*
+
+*既存ソースコード*
+```html
+    <nav id="slide-menu" class="slide-menu header-menu" aria-label="メインナビゲーション" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;">
+      <ul id="header-items" style="box-sizing: border-box; display: flex; align-items: center; gap: 2.5rem; list-style: none; margin: 0; padding: 0;">
+        <li class="header-item" style="box-sizing: border-box; margin: 0; padding: 0; position: relative; font-size: 1rem; font-weight: 500; color: #e2e2e8; letter-spacing: 0.06em; list-style: none;"><a class="header-item" href="#company-service" style="box-sizing: border-box; margin: 0; position: relative; font-size: 1rem; font-weight: 500; letter-spacing: 0.06em; list-style: none; text-decoration: none; transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); display: inline-block; padding: 0.4rem 0; color: inherit;">サービス</a></li>
+
+        <li class="header-item" style="box-sizing: border-box; margin: 0; padding: 0; position: relative; font-size: 1rem; font-weight: 500; color: #e2e2e8; letter-spacing: 0.06em; list-style: none;"><a class="header-item" href="#company-dx" style="box-sizing: border-box; margin: 0; position: relative; font-size: 1rem; font-weight: 500; letter-spacing: 0.06em; list-style: none; text-decoration: none; transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); display: inline-block; padding: 0.4rem 0; color: inherit;">DX・自動化</a></li>
+
+        <li class="header-item" style="box-sizing: border-box; margin: 0; padding: 0; position: relative; font-size: 1rem; font-weight: 500; color: #e2e2e8; letter-spacing: 0.06em; list-style: none;"><a class="header-item" href="#company-info" style="box-sizing: border-box; margin: 0; position: relative; font-size: 1rem; font-weight: 500; letter-spacing: 0.06em; list-style: none; text-decoration: none; transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); display: inline-block; padding: 0.4rem 0; color: inherit;">会社案内</a></li>
+
+        <li class="header-item" style="box-sizing: border-box; margin: 0; padding: 0; position: relative; font-size: 1rem; font-weight: 500; color: #e2e2e8; letter-spacing: 0.06em; list-style: none;"><a class="header-item" href="#company-qa" style="box-sizing: border-box; margin: 0; position: relative; font-size: 1rem; font-weight: 500; letter-spacing: 0.06em; list-style: none; text-decoration: none; transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); display: inline-block; padding: 0.4rem 0; color: inherit;">お問い合わせ</a></li>
+
+      </ul>
+    </nav>
+```
+
+
+
+
+
 ## 11/02 part-4
 ## =============
 [ROLE]

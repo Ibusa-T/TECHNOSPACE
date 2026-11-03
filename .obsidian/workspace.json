@@ -13,12 +13,38 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "WORK.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "WORK"
+            }
+          },
+          {
+            "id": "aa71ee9939553d5f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "FIXTURE.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "FIXTURE"
+            }
+          },
+          {
+            "id": "336fe7b0c705ee0d",
+            "type": "leaf",
+            "state": {
+              "type": "vscode-editor",
+              "state": {
+                "file": "index.html"
+              },
+              "icon": "lucide-file",
+              "title": "index"
             }
           }
         ]
@@ -188,15 +214,15 @@
   },
   "active": "4bb52dd8f1b82bd6",
   "lastOpenFiles": [
+    "FIXTURE.md",
     "WORK.md",
+    "index.html",
+    "README.md",
     "FIXTURE.md.tmp.11328.199d6997dde0",
     "FIXTURE.md.tmp.11328.dea05b640f8f",
-    "index.html",
     "Pasted image 20261103191033.png",
-    "FIXTURE.md",
     "static/img/dx_service.jpg",
     "Pasted image 20261103191005.png",
-    "README.md",
     "static/img/phone.png",
     "static/img/pc-printer.png",
     "static/img",
