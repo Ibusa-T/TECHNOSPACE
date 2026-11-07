@@ -546,6 +546,20 @@
         }
       });
 
+      // DXセクション スクロール連動 背景輝度変化
+      const dx = document.querySelector('#company-dx');
+      const dxBgLayer = document.getElementById('dx-bg-layer');
+      if (dx && dxBgLayer) {
+        window.addEventListener('scroll', () => {
+          const sx_abs = dx.getBoundingClientRect().top + window.scrollY;
+          const viewCenter = window.scrollY + window.innerHeight * 0.5;
+          const dxBottom = sx_abs + dx.offsetHeight;
+          dxBgLayer.style.filter = (viewCenter >= sx_abs && viewCenter <= dxBottom)
+            ? 'brightness(1.15)'
+            : 'brightness(0.7)';
+        });
+      }
+
       // ナビゲーションおよびCTAリンクのスムーズスクロール＆モバイルメニュー自動クローズ
       const anchorLinks = document.querySelectorAll('a[href^="#"], .header-item a');
       anchorLinks.forEach((link) => {
