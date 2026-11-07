@@ -271,6 +271,19 @@
         padding: 4rem 1.5rem !important;
       }
     }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-fadein {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
   </style>
 </head>
 <body style="box-sizing: border-box; margin: 0; padding: 0; background-color: #0a0b0e; background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 4px), repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.018) 0px, rgba(255, 255, 255, 0.018) 1px, transparent 1px, transparent 6px), radial-gradient(circle at 15% 15%, rgba(212, 175, 55, 0.07) 0%, transparent 40%), radial-gradient(circle at 85% 80%, rgba(192, 192, 200, 0.05) 0%, transparent 40%), radial-gradient(circle at 30% 60%, rgba(0, 20, 60, 0.20) 0%, transparent 45%), radial-gradient(ellipse at 70% 10%, rgba(0, 15, 50, 0.16) 0%, transparent 40%); color: #c0c0c8; font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; line-height: 1.75; min-height: 100vh; overflow-x: hidden; width: 100%;">
@@ -303,10 +316,10 @@
   <!-- ヒーローセクション -->
   <section class="hero-banner" style="box-sizing: border-box; max-width: 1360px; margin: 0 auto; padding: 5rem 2rem 3.5rem; text-align: center; border-bottom: 1px solid rgba(192, 192, 200, 0.18);">
     <h1 style="box-sizing: border-box; margin: 0 0 1.25rem 0; padding: 0; color: #d4af37; font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif; letter-spacing: 0.08em; font-weight: 700; font-size: clamp(1.85rem, 3.6vw, 2.85rem); line-height: 1.4;">
-      <span style="box-sizing: border-box; margin: 0 0 1.25rem 0; padding: 0; display: block; font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; font-size: 0.82rem; font-weight: 600; font-style: italic; letter-spacing: 0.12em; color: #f3e5ab; line-height: 1.75;">OFFICE TOTAL SOLUTION — 北九州市の複合機・ビジネスフォン・PC導入・業務DX</span>
-      <span style="box-sizing: border-box; margin: 0; padding: 0; display: inline-block; background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa820a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">オフィス環境の最適化を、確かな実績と提案で。</span>
+      <span class="hero-fadein" style="box-sizing: border-box; margin: 0 0 1.25rem 0; padding: 0; display: block; font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; font-size: 0.82rem; font-weight: 600; font-style: italic; letter-spacing: 0.12em; color: #f3e5ab; line-height: 1.75; animation: fadeUp 0.7s cubic-bezier(0.25, 0.8, 0.25, 1) 0s both;">OFFICE TOTAL SOLUTION — 北九州市の複合機・ビジネスフォン・PC導入・業務DX</span>
+      <span class="hero-fadein" style="box-sizing: border-box; margin: 0; padding: 0; display: inline-block; background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa820a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: fadeUp 0.7s cubic-bezier(0.25, 0.8, 0.25, 1) 0.15s both;">オフィス環境の最適化を、確かな実績と提案で。</span>
     </h1>
-    <h2 style="box-sizing: border-box; padding: 0; font-size: 1.05rem; color: #c0c0c8; max-width: 740px; margin: 0 auto 2.25rem;">北九州市を中心に、複合機・ビジネスフォン・PCソリューションの導入から保守・業務自動化まで、ビジネスを最適にするオフィス環境をご提案。</h2>
+    <h2 class="hero-fadein" style="box-sizing: border-box; padding: 0; font-size: 1.05rem; color: #c0c0c8; max-width: 740px; margin: 0 auto 2.25rem; animation: fadeUp 0.7s cubic-bezier(0.25, 0.8, 0.25, 1) 0.3s both;">北九州市を中心に、複合機・ビジネスフォン・PCソリューションの導入から保守・業務自動化まで、ビジネスを最適にするオフィス環境をご提案。</h2>
     <a class="hero-cta" href="#company-qa" style="box-sizing: border-box; margin: 0; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.95rem 2.4rem; background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%); color: #0a0a0c; font-size: 1.02rem; font-weight: 700; letter-spacing: 0.08em; border-radius: 6px; box-shadow: 0 4px 18px rgba(212, 175, 55, 0.3); transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);">無料お見積もり・ご相談はこちら</a>
   </section>
 
