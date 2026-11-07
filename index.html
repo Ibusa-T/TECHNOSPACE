@@ -273,7 +273,7 @@
     }
   </style>
 </head>
-<body style="box-sizing: border-box; margin: 0; padding: 0; background-color: #0a0b0e; background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 4px), repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.018) 0px, rgba(255, 255, 255, 0.018) 1px, transparent 1px, transparent 6px), radial-gradient(circle at 15% 15%, rgba(212, 175, 55, 0.07) 0%, transparent 40%), radial-gradient(circle at 85% 80%, rgba(192, 192, 200, 0.05) 0%, transparent 40%); color: #c0c0c8; font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; line-height: 1.75; min-height: 100vh; overflow-x: hidden; width: 100%;">
+<body style="box-sizing: border-box; margin: 0; padding: 0; background-color: #0a0b0e; background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 4px), repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.018) 0px, rgba(255, 255, 255, 0.018) 1px, transparent 1px, transparent 6px), radial-gradient(circle at 15% 15%, rgba(212, 175, 55, 0.07) 0%, transparent 40%), radial-gradient(circle at 85% 80%, rgba(192, 192, 200, 0.05) 0%, transparent 40%), radial-gradient(circle at 30% 60%, rgba(0, 20, 60, 0.20) 0%, transparent 45%), radial-gradient(ellipse at 70% 10%, rgba(0, 15, 50, 0.16) 0%, transparent 40%); color: #c0c0c8; font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; line-height: 1.75; min-height: 100vh; overflow-x: hidden; width: 100%;">
 
   <!-- ヘッダー & スライド・回転メニュー -->
   <header style="box-sizing: border-box; margin: 0; position: sticky; top: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 4rem; background: rgba(10, 11, 14, 0.95); border-bottom: 1px solid rgba(212, 175, 55, 0.35); color: #d4af37; font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif; font-size: 1.35rem; font-weight: 700; letter-spacing: 0.1em; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);">
@@ -360,7 +360,7 @@
   <section id="company-dx" style="box-sizing: border-box; position: relative; width: 100%; min-height: 480px; overflow: hidden; border-top: 1px solid rgba(212, 175, 55, 0.35); border-bottom: 1px solid rgba(212, 175, 55, 0.35);">
 
     <!-- 背景画像レイヤー -->
-    <div style="box-sizing: border-box; position: absolute; inset: 0; background-image: url('./static/img/dx_service.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 0;"></div>
+    <div id="dx-bg-layer" style="box-sizing: border-box; position: absolute; inset: 0; background-image: url('./static/img/dx_service.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 0; filter: brightness(0.7); transition: filter 0.6s ease;"></div>
 
     <!-- オーバーレイ（可読性確保 + ブランドカラー） -->
     <div style="box-sizing: border-box; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10, 11, 14, 0.88) 0%, rgba(10, 11, 14, 0.72) 50%, rgba(20, 15, 5, 0.82) 100%); z-index: 1;"></div>
