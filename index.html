@@ -270,6 +270,11 @@
       #company-dx > div:last-child {
         padding: 4rem 1.5rem !important;
       }
+
+      #company-qa input[type="submit"] {
+        min-width: 0 !important;
+        width: 100% !important;
+      }
     }
 
     @keyframes fadeUp {
@@ -430,10 +435,10 @@
         <label for="order" style="box-sizing: border-box; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.98rem; font-weight: 600; color: #f3e5ab; letter-spacing: 0.04em;">
           お問い合わせ項目
           <select name="order-items" id="order" style="box-sizing: border-box; margin: 0; width: 100%; padding: 1rem 1.2rem; background: #141418; border: 1px solid rgba(192, 192, 200, 0.18); border-radius: 6px; color: #e2e2e8; font-size: 1rem; font-weight: 400; font-family: inherit; transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); outline: none;">
-            <option value="example" style="box-sizing: border-box; margin: 0; padding: 0; background: #141418; color: #e2e2e8;">業務自動化の相談</option>
-            <option value="quotation" style="box-sizing: border-box; margin: 0; padding: 0; background: #141418; color: #e2e2e8;">お見積もりの相談</option>
-            <option class="order-item" value="materials" style="box-sizing: border-box; margin: 0; padding: 0; background: #141418; color: #e2e2e8;">製品資料の取り寄せ</option>
-            <option value="example" style="box-sizing: border-box; margin: 0; padding: 0; background: #141418; color: #e2e2e8;">その他</option>
+            <option value="automation" style="box-sizing: border-box; background: #141418; color: #e2e2e8;">業務自動化の相談</option>
+            <option value="quotation"  style="box-sizing: border-box; background: #141418; color: #e2e2e8;">お見積もりの相談</option>
+            <option value="materials"  style="box-sizing: border-box; background: #141418; color: #e2e2e8;">製品資料の取り寄せ</option>
+            <option value="other"      style="box-sizing: border-box; background: #141418; color: #e2e2e8;">その他</option>
           </select>
         </label>
         <label for="qa-field" style="box-sizing: border-box; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.98rem; font-weight: 600; color: #f3e5ab; letter-spacing: 0.04em;">
@@ -550,14 +555,18 @@
       const dx = document.querySelector('#company-dx');
       const dxBgLayer = document.getElementById('dx-bg-layer');
       if (dx && dxBgLayer) {
+        const sx_abs  = dx.getBoundingClientRect().top + window.scrollY;
+        const dxHeight = dx.offsetHeight;
+
         window.addEventListener('scroll', () => {
-          const sx_abs = dx.getBoundingClientRect().top + window.scrollY;
           const viewCenter = window.scrollY + window.innerHeight * 0.5;
-          const dxBottom = sx_abs + dx.offsetHeight;
+          const dxBottom   = sx_abs + dxHeight;
           dxBgLayer.style.filter = (viewCenter >= sx_abs && viewCenter <= dxBottom)
             ? 'brightness(1.5)'
             : 'brightness(0.7)';
         });
+
+        window.dispatchEvent(new Event('scroll'));
       }
 
       // ナビゲーションおよびCTAリンクのスムーズスクロール＆モバイルメニュー自動クローズ
