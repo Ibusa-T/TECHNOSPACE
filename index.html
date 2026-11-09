@@ -64,232 +64,7 @@
       }
     }
   </script>
-  <style>
-    /* タグインライン(style属性)では記述できない擬似要素・擬似クラス・状態クラス・メディアクエリのみ定義 */
-    :root {
-      --bg-card-hover: #22222a;
-      --gold-primary: #d4af37;
-      --gold-light: #f3e5ab;
-      --silver-muted: #8e8e99;
-      --border-gold: rgba(212, 175, 55, 0.35);
-      --border-silver: rgba(192, 192, 200, 0.18);
-      --shadow-gold: 0 12px 32px -5px rgba(212, 175, 55, 0.18);
-    }
-
-    /* 擬似要素 */
-    header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .header-item::after,
-    .footer-item::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
-      transition: width 0.3s ease;
-    }
-
-    .section-heading::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 64px;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
-    }
-
-    #company-info .info-items::before {
-      content: "◆";
-      color: var(--gold-primary);
-      font-size: 0.9rem;
-    }
-
-    #company-qa textarea::placeholder {
-      color: var(--silver-muted);
-    }
-
-    /* 擬似クラス (:hover / :focus) */
-    a:hover,
-    .header-item:hover,
-    .header-item a:hover,
-    .footer-item:hover,
-    .footer-item a:hover {
-      color: var(--gold-primary) !important;
-    }
-
-    .header-item:hover::after,
-    .footer-item:hover::after {
-      width: 100%;
-    }
-
-    .hero-cta:hover {
-      color: #0a0a0c !important;
-      transform: translateY(-2px) !important;
-      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%) !important;
-      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45) !important;
-    }
-
-    main#company-service > div:hover {
-      transform: translateY(-6px) !important;
-      background: var(--bg-card-hover) !important;
-      border-color: var(--border-gold) !important;
-      box-shadow: var(--shadow-gold) !important;
-    }
-
-    #company-qa select:focus,
-    #company-qa textarea:focus {
-      border-color: var(--gold-primary) !important;
-      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2) !important;
-    }
-
-    #company-qa input[type="submit"]:hover {
-      transform: translateY(-2px) !important;
-      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%) !important;
-      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45) !important;
-    }
-
-    /* DX セクション CTAボタン hover */
-    .dx-cta:hover {
-      color: #0a0a0c !important;
-      transform: translateY(-2px) !important;
-      background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 100%) !important;
-      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45) !important;
-    }
-
-    /* JS連動の状態クラス (.is-open) */
-    #menu-toggle.is-open {
-      transform: rotate(180deg) !important;
-      border-color: var(--gold-light) !important;
-      box-shadow: 0 0 15px rgba(212, 175, 55, 0.35) !important;
-    }
-
-    #menu-toggle.is-open span:nth-child(1) {
-      transform: translateY(10px) rotate(45deg) !important;
-    }
-
-    #menu-toggle.is-open span:nth-child(2) {
-      opacity: 0 !important;
-    }
-
-    #menu-toggle.is-open span:nth-child(3) {
-      transform: translateY(-10px) rotate(-45deg) !important;
-    }
-
-    .menu-backdrop.is-open {
-      opacity: 1 !important;
-      visibility: visible !important;
-      pointer-events: auto !important;
-    }
-
-    /* モバイル・タブレットレスポンシブ: スライド＆回転メニュー */
-    @media (max-width: 960px) {
-      header {
-        padding: 1rem 1.5rem !important;
-        font-size: 1.15rem !important;
-      }
-
-      .mobile-controls,
-      #menu-toggle {
-        display: flex !important;
-      }
-
-      .slide-menu.header-menu {
-        position: fixed !important;
-        top: 0 !important;
-        right: -100vw !important;
-        width: min(80vw, 320px) !important;
-        height: 100vh !important;
-        background: #141418 !important;
-        border-left: 1px solid var(--border-gold) !important;
-        padding: 5.5rem 2rem 2rem !important;
-        transform: rotate(-4deg) !important;
-        transform-origin: top right !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-        transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1), transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease, visibility 0.35s ease !important;
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.8) !important;
-        z-index: 1050 !important;
-      }
-
-      .slide-menu.header-menu.is-open {
-        right: 0 !important;
-        transform: rotate(0deg) !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        pointer-events: auto !important;
-      }
-
-      .header-menu #header-items {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 1.25rem !important;
-      }
-
-      .header-item {
-        font-size: 1.15rem !important;
-        width: 100% !important;
-        border-bottom: 1px solid var(--border-silver) !important;
-      }
-
-      .header-item a {
-        display: block !important;
-        width: 100% !important;
-        padding: 0.75rem 0 !important;
-        border-bottom: none !important;
-      }
-
-      main#company-service {
-        grid-template-columns: 1fr !important;
-        max-width: 520px !important;
-        padding: 1rem 0 2.5rem !important;
-      }
-
-      main#company-service > div {
-        padding: 1.5rem 1.25rem !important;
-      }
-
-      #company-info,
-      #company-qa {
-        padding: 2rem 1.5rem !important;
-      }
-
-      /* DX セクション モバイル対応 */
-      #company-dx > div:last-child {
-        padding: 4rem 1.5rem !important;
-      }
-
-      #company-qa input[type="submit"] {
-        min-width: 0 !important;
-        width: 100% !important;
-      }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .hero-fadein {
-        animation: none !important;
-        opacity: 1 !important;
-        transform: none !important;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="./static/css/index.css">
 </head>
 <body style="box-sizing: border-box; margin: 0; padding: 0; background-color: #0a0b0e; background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 4px), repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.018) 0px, rgba(255, 255, 255, 0.018) 1px, transparent 1px, transparent 6px), radial-gradient(circle at 15% 15%, rgba(212, 175, 55, 0.07) 0%, transparent 40%), radial-gradient(circle at 85% 80%, rgba(192, 192, 200, 0.05) 0%, transparent 40%), radial-gradient(circle at 30% 60%, rgba(0, 20, 60, 0.20) 0%, transparent 45%), radial-gradient(ellipse at 70% 10%, rgba(0, 15, 50, 0.16) 0%, transparent 40%); color: #c0c0c8; font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; line-height: 1.75; min-height: 100vh; overflow-x: hidden; width: 100%;">
 
@@ -321,11 +96,11 @@
   <!-- ヒーローセクション -->
   <section class="hero-banner" style="box-sizing: border-box; max-width: 1360px; margin: 0 auto; padding: 5rem 2rem 3.5rem; text-align: center; border-bottom: 1px solid rgba(192, 192, 200, 0.18);">
     <h1 style="box-sizing: border-box; margin: 0 0 1.25rem 0; padding: 0; color: #d4af37; font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif; letter-spacing: 0.08em; font-weight: 700; font-size: clamp(1.85rem, 3.6vw, 2.85rem); line-height: 1.4;">
-      <span class="hero-fadein" style="box-sizing: border-box; margin: 0 0 1.25rem 0; padding: 0; display: block; font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; font-size: 0.82rem; font-weight: 600; font-style: italic; letter-spacing: 0.12em; color: #f3e5ab; line-height: 1.75; animation: fadeUp 0.7s cubic-bezier(0.25, 0.8, 0.25, 1) 0s both;">OFFICE TOTAL SOLUTION — 北九州市の複合機・ビジネスフォン・PC導入・業務DX</span>
+      <span class="hero-fadein" style="box-sizing: border-box; margin: 0 0 1.25rem 0; padding: 0; display: block; font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; font-size: 0.82rem; font-weight: 600; font-style: italic; letter-spacing: 0.12em; color: #f3e5ab; line-height: 1.75; animation: fadeUp 0.7s cubic-bezier(0.25, 0.8, 0.25, 1) 0s both;"><h2>OFFICE TOTAL SOLUTION</h2></span>
       <span class="hero-fadein" style="box-sizing: border-box; margin: 0; padding: 0; display: inline-block; background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa820a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: fadeUp 0.7s cubic-bezier(0.25, 0.8, 0.25, 1) 0.15s both;">オフィス環境の最適化を、確かな実績と提案で。</span>
     </h1>
     <h2 class="hero-fadein" style="box-sizing: border-box; padding: 0; font-size: 1.05rem; color: #c0c0c8; max-width: 740px; margin: 0 auto 2.25rem; animation: fadeUp 0.7s cubic-bezier(0.25, 0.8, 0.25, 1) 0.3s both;">北九州市を中心に、複合機・ビジネスフォン・PCソリューションの導入から保守・業務自動化まで、ビジネスを最適にするオフィス環境をご提案。</h2>
-    <a class="hero-cta" href="#company-qa" style="box-sizing: border-box; margin: 0; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.95rem 2.4rem; background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%); color: #0a0a0c; font-size: 1.02rem; font-weight: 700; letter-spacing: 0.08em; border-radius: 6px; box-shadow: 0 4px 18px rgba(212, 175, 55, 0.3); transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);">無料お見積もり・ご相談はこちら</a>
+    <a class="hero-cta" href="#company-qa" style="box-sizing: border-box; margin: 0; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.95rem 2.4rem; background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%); color: #0a0a0c; font-size: 1.02rem; font-weight: 700; letter-spacing: 0.08em; border-radius: 6px; box-shadow: 0 4px 18px rgba(212, 175, 55, 0.3); transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);">サービスについてのご質問はこちら</a>
   </section>
 
   <!-- セクション「サービス」 -->
@@ -371,10 +146,13 @@
         >
         <div style="box-sizing: border-box; margin: 0; padding: 0; font-size: 0.98rem; color: #c0c0c8; line-height: 1.8; width: 100%; flex-grow: 1;">業務内容やオフィス環境に合わせて、最適なパソコンやプリンターを提案。高速処理や高画質印刷など、効率的に作業を進められる性能を備える</div>
       </div>
+      <a href="#company-qa" id="service-estimate-btn" style="box-sizing: border-box; margin: 2rem auto 0; text-decoration: none; display: block; text-align: center; color: #d4af37; transition: color 0.3s ease;">
+        <h3 style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif; font-size: 1.35rem; font-weight: 700; letter-spacing: 0.1em;">導入のご相談はこちら</h3>
+      </a>
     </main>
   </section>
 
-  <!-- セクション「業務オートメーション・DX」 -->
+  <!-- セクション「DX」 -->
   <section id="company-dx" style="box-sizing: border-box; position: relative; width: 100%; min-height: 480px; overflow: hidden; border-top: 1px solid rgba(212, 175, 55, 0.35); border-bottom: 1px solid rgba(212, 175, 55, 0.35);">
 
     <!-- 背景画像レイヤー -->
@@ -402,7 +180,7 @@
 
       <!-- CTAボタン -->
       <a class="dx-cta" href="#company-qa" style="box-sizing: border-box; margin: 0; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2.6rem; background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%); color: #0a0a0c; font-size: 1.02rem; font-weight: 700; letter-spacing: 0.1em; border-radius: 6px; box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4); transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);">
-        DX導入のご相談はこちら
+        業務自動化などに関連するご相談はこちら
       </a>
 
     </div>
@@ -431,15 +209,56 @@
   <section class="section-wrapper" style="box-sizing: border-box; max-width: 1440px; margin: 0 auto; padding: 4.5rem 2rem;">
     <h2 class="section-heading" style="box-sizing: border-box; margin: 0; padding: 0; color: #d4af37; font-family: 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif; letter-spacing: 0.08em; font-weight: 700; font-size: 1.95rem; text-align: center; margin-bottom: 3rem; position: relative; padding-bottom: 0.85rem;">お問い合わせ</h2>
     <div id="company-qa" style="box-sizing: border-box; color: #c0c0c8; max-width: 900px; margin: 0 auto 4rem; padding: 3rem; background: #1a1a20; border: 1px solid rgba(212, 175, 55, 0.35); border-radius: 10px; box-shadow: 0 12px 32px -5px rgba(212, 175, 55, 0.18);">
-      <form action="javascript:alert('ここを押すとメールが届く')" onsubmit="alert('ここを押すとメールが届く'); return false;" method="POST" style="box-sizing: border-box; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.75rem;">
+      <form action="javascript:alert('ここを押すとメールが届く')" method="POST" style="box-sizing: border-box; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.75rem;">
         <label for="order" style="box-sizing: border-box; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.98rem; font-weight: 600; color: #f3e5ab; letter-spacing: 0.04em;">
           お問い合わせ項目
           <select name="order-items" id="order" style="box-sizing: border-box; margin: 0; width: 100%; padding: 1rem 1.2rem; background: #141418; border: 1px solid rgba(192, 192, 200, 0.18); border-radius: 6px; color: #e2e2e8; font-size: 1rem; font-weight: 400; font-family: inherit; transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); outline: none;">
-            <option value="automation" style="box-sizing: border-box; background: #141418; color: #e2e2e8;">業務自動化の相談</option>
+            <option value="automation" style="box-sizing: border-box; background: #141418; color: #e2e2e8;">業務自動化に関するご質問・ご相談</option>
             <option value="quotation"  style="box-sizing: border-box; background: #141418; color: #e2e2e8;">お見積もりの相談</option>
-            <option value="materials"  style="box-sizing: border-box; background: #141418; color: #e2e2e8;">製品資料の取り寄せ</option>
-            <option value="other"      style="box-sizing: border-box; background: #141418; color: #e2e2e8;">その他</option>
+            <option value="materials"  style="box-sizing: border-box; background: #141418; color: #e2e2e8;">取り扱い製品に関するご質問・ご相談</option>
+            <option value="other"      style="box-sizing: border-box; background: #141418; color: #e2e2e8;">その他のサービスに関するご質問・ご相談</option>
           </select>
+        </label>
+        <!-- お名前 -->
+        <label for="guest-name" style="box-sizing: border-box; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.98rem; font-weight: 600; color: #f3e5ab; letter-spacing: 0.04em;">
+          お名前（任意）
+          <input
+            type="text"
+            id="guest-name"
+            name="guest-name"
+            placeholder="お名前"
+            minlength="1"
+            maxlength="15"
+            style="box-sizing: border-box; margin: 0; width: 100%; padding: 1rem 1.2rem; background: #141418; border: 1px solid rgba(192, 192, 200, 0.18); border-radius: 6px; color: #e2e2e8; font-size: 1rem; font-family: inherit; transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); outline: none;"
+          >
+        </label>
+
+        <!-- 所属会社（お名前入力後に表示） -->
+        <label for="guest-company" id="label-company" style="box-sizing: border-box; margin: 0; padding: 0; display: none; flex-direction: column; gap: 0.6rem; font-size: 0.98rem; font-weight: 600; color: #f3e5ab; letter-spacing: 0.04em;">
+          所属会社（任意）
+          <input
+            type="text"
+            id="guest-company"
+            name="guest-company"
+            placeholder="所属会社"
+            minlength="1"
+            maxlength="20"
+            style="box-sizing: border-box; margin: 0; width: 100%; padding: 1rem 1.2rem; background: #141418; border: 1px solid rgba(192, 192, 200, 0.18); border-radius: 6px; color: #e2e2e8; font-size: 1rem; font-family: inherit; transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); outline: none;"
+          >
+        </label>
+
+        <!-- 所属部署（所属会社入力後に表示） -->
+        <label for="guest-dept" id="label-dept" style="box-sizing: border-box; margin: 0; padding: 0; display: none; flex-direction: column; gap: 0.6rem; font-size: 0.98rem; font-weight: 600; color: #f3e5ab; letter-spacing: 0.04em;">
+          所属部署（任意）
+          <input
+            type="text"
+            id="guest-dept"
+            name="guest-dept"
+            placeholder="所属部署"
+            minlength="1"
+            maxlength="20"
+            style="box-sizing: border-box; margin: 0; width: 100%; padding: 1rem 1.2rem; background: #141418; border: 1px solid rgba(192, 192, 200, 0.18); border-radius: 6px; color: #e2e2e8; font-size: 1rem; font-family: inherit; transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); outline: none;"
+          >
         </label>
         <label for="qa-field" style="box-sizing: border-box; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.98rem; font-weight: 600; color: #f3e5ab; letter-spacing: 0.04em;">
           お問い合わせ内容詳細
@@ -448,6 +267,8 @@
             name="qa-field-detail"
             rows="5"
             cols="30"
+            minlength="15"
+            maxlength="300"
             placeholder="導入をご検討中の機器や、現在のオフィス環境のお悩みをご記入ください"
             style="box-sizing: border-box; margin: 0; width: 100%; padding: 1rem 1.2rem; background: #141418; border: 1px solid rgba(192, 192, 200, 0.18); border-radius: 6px; color: #e2e2e8; font-size: 1rem; font-weight: 400; font-family: inherit; transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); outline: none;"
           ></textarea>
@@ -470,120 +291,6 @@
     <small style="box-sizing: border-box; margin: 0; padding: 0; color: #c0c0c8; font-size: 0.9rem; letter-spacing: 0.08em;">@Copyright2026</small>
   </footer>
 
-  <script>
-    // 画像未配置時に420x420のスタイリッシュなSVGプレースホルダーを描画
-    function applyPlaceholderImage(imgEl) {
-      if (!imgEl || imgEl.dataset.fallbackApplied === 'true') return;
-      imgEl.dataset.fallbackApplied = 'true';
-      const title = imgEl.getAttribute('data-placeholder-title') || imgEl.getAttribute('alt') || 'IMAGE';
-      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="420" height="420" viewBox="0 0 420 420">
-        <defs>
-          <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#1a1a22"/>
-            <stop offset="100%" stop-color="#0d0d12"/>
-          </linearGradient>
-        </defs>
-        <rect width="420" height="420" fill="url(#bg)"/>
-        <rect x="16" y="16" width="388" height="388" rx="8" fill="none" stroke="#d4af37" stroke-opacity="0.35" stroke-dasharray="6 6"/>
-        <circle cx="210" cy="175" r="42" fill="none" stroke="#d4af37" stroke-opacity="0.55" stroke-width="2"/>
-        <path d="M192 175h36M210 157v36" stroke="#d4af37" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round"/>
-        <text x="210" y="255" text-anchor="middle" fill="#d4af37" font-family="sans-serif" font-size="20" font-weight="bold" letter-spacing="2">${title}</text>
-        <text x="210" y="285" text-anchor="middle" fill="#8e8e99" font-family="sans-serif" font-size="13" letter-spacing="1">420 × 420 Image Area</text>
-      </svg>`;
-      imgEl.src = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
-    }
-
-    let isMenuListenerAttached = false;
-
-    function validateTestMaxLength() {
-      const test = document.getElementById('test_max_length');
-      if (!test) return;
-      if (test.value.length > 1 || Number(test.value) > 1) {
-        throw Error('eeeeee');
-      }
-    }
-
-    function setMenuOpenState(isOpen) {
-      const menuToggle = document.getElementById('menu-toggle');
-      const slideMenu = document.getElementById('slide-menu') || document.querySelector('.slide-menu');
-      const backdrop = document.getElementById('menu-backdrop');
-      if (!menuToggle || !slideMenu) return;
-
-      menuToggle.classList.toggle('is-open', isOpen);
-      slideMenu.classList.toggle('is-open', isOpen);
-      if (backdrop) {
-        backdrop.classList.toggle('is-open', isOpen);
-      }
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
-    }
-
-    function menuEvent() {
-      const menuToggle = document.getElementById('menu-toggle');
-      const slideMenu = document.getElementById('slide-menu') || document.querySelector('.slide-menu');
-      if (!menuToggle || !slideMenu) return;
-
-      // menuEvent() 直接呼び出し時にも入力値検証を実行
-      validateTestMaxLength();
-
-      if (!isMenuListenerAttached) {
-        menuToggle.addEventListener('click', () => {
-          // ボタンとメニューの両方にクラスをトグル（交互に付け外し）する
-          const willOpen = !menuToggle.classList.contains('is-open');
-          setMenuOpenState(willOpen);
-          validateTestMaxLength();
-        });
-        isMenuListenerAttached = true;
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      menuEvent();
-
-      const backdrop = document.getElementById('menu-backdrop');
-      if (backdrop) {
-        backdrop.addEventListener('click', () => setMenuOpenState(false));
-      }
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          setMenuOpenState(false);
-        }
-      });
-
-      // DXセクション スクロール連動 背景輝度変化
-      const dx = document.querySelector('#company-dx');
-      const dxBgLayer = document.getElementById('dx-bg-layer');
-      if (dx && dxBgLayer) {
-        const sx_abs  = dx.getBoundingClientRect().top + window.scrollY;
-        const dxHeight = dx.offsetHeight;
-
-        window.addEventListener('scroll', () => {
-          const viewCenter = window.scrollY + window.innerHeight * 0.5;
-          const dxBottom   = sx_abs + dxHeight;
-          dxBgLayer.style.filter = (viewCenter >= sx_abs && viewCenter <= dxBottom)
-            ? 'brightness(1.5)'
-            : 'brightness(0.7)';
-        });
-
-        window.dispatchEvent(new Event('scroll'));
-      }
-
-      // ナビゲーションおよびCTAリンクのスムーズスクロール＆モバイルメニュー自動クローズ
-      const anchorLinks = document.querySelectorAll('a[href^="#"], .header-item a');
-      anchorLinks.forEach((link) => {
-        link.addEventListener('click', (e) => {
-          const rawHref = link.getAttribute('href') || '';
-          const targetId = rawHref.startsWith('#') ? rawHref.slice(1) : rawHref;
-          const targetEl = document.getElementById(targetId);
-          if (targetEl) {
-            e.preventDefault();
-            targetEl.scrollIntoView({ behavior: 'smooth' });
-          }
-          setMenuOpenState(false);
-        });
-      });
-    });
-  </script>
+  <script src="./static/js/index.js"></script>
 </body>
 </html>
