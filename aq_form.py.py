@@ -1,13 +1,8 @@
 import sqlite3
 
-def load_extention():
+def load_sqlite():
    db = sqlite3.connect('qa_form')
-   # 拡張機能を有効化する
-   db.enable_load_extension(True)
-   sqlite_vec.load(db)
-   # 必要なロードが終わればオフにする
    db.enable_load_extension(False)
-   # システムプロンプト
    return db
 
 

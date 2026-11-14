@@ -8,21 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "4bb52dd8f1b82bd6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "WORK.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "WORK"
-            }
-          },
-          {
-            "id": "aa71ee9939553d5f",
+            "id": "4922295824e4515b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -36,7 +22,7 @@
             }
           },
           {
-            "id": "336fe7b0c705ee0d",
+            "id": "48c10327672c4bc2",
             "type": "leaf",
             "state": {
               "type": "vscode-editor",
@@ -212,21 +198,27 @@
       "vscode-editor:Create Code File": false
     }
   },
-  "active": "4bb52dd8f1b82bd6",
+  "active": "4922295824e4515b",
   "lastOpenFiles": [
-    "FIXTURE.md",
-    "WORK.md",
     "index.html",
+    "FIXTURE.md",
+    "TEAMS.md",
+    "WORK.md",
     "README.md",
-    "FIXTURE.md.tmp.11328.199d6997dde0",
-    "FIXTURE.md.tmp.11328.dea05b640f8f",
+    "aq_form.py.py",
+    "CUsersUserAppDataLocalTempclaude135249e33f21bbc440b3a4dc-7d02-4a90-b62b-d07305a81c0ascratchpadhero-fadein.html",
+    "FIXTURE.md.tmp.14040.fec67af09dd9",
+    "index.html.tmp.8392.02753848ebc5",
+    "index.html.tmp.8392.b3eb1194b381",
+    "index.html.tmp.1592.08267f3d2d1a",
+    "index.html.tmp.1592.23872054b119",
+    "index.html.tmp.8392.173d2d748c44",
+    "index.html.tmp.8392.f26eeff452bb",
+    "static/img/dx_service.svg",
     "Pasted image 20261103191033.png",
     "static/img/dx_service.jpg",
     "Pasted image 20261103191005.png",
     "static/img/phone.png",
-    "static/img/pc-printer.png",
-    "static/img",
-    "static",
-    "aq_form.py.py"
+    "static/img/pc-printer.png"
   ]
 }
