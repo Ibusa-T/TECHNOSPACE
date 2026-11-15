@@ -74,13 +74,14 @@ a:hover,
   box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45) !important;
 }
 
-main#company-service > div:hover {
+.service-products-grid > div:hover {
   transform: translateY(-6px) !important;
   background: var(--bg-card-hover) !important;
   border-color: var(--border-gold) !important;
   box-shadow: var(--shadow-gold) !important;
 }
 
+#company-qa input[type="text"]:focus,
 #company-qa select:focus,
 #company-qa textarea:focus {
   border-color: var(--gold-primary) !important;
@@ -93,12 +94,34 @@ main#company-service > div:hover {
   box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45) !important;
 }
 
-/* DX セクション CTAボタン hover */
-.dx-cta:hover {
+/* サービス導入相談ボタン hover */
+#service-estimate-btn:hover {
+  color: var(--gold-light) !important;
+  transform: translateY(-2px);
+}
+
+/* DX セクション・Web制作セクション CTAボタン hover */
+.dx-cta:hover,
+.web-contents-create-cta:hover {
   color: #0a0a0c !important;
   transform: translateY(-2px) !important;
   background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 100%) !important;
   box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45) !important;
+}
+
+/* FAQ セクション (<summary> マーカー正規化・Q装飾) */
+#company-faq summary {
+  list-style: none;
+}
+
+#company-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+#company-faq summary::before {
+  content: "Q. ";
+  color: var(--gold-primary);
+  font-weight: 700;
 }
 
 /* JS連動の状態クラス (.is-open) */
@@ -131,6 +154,11 @@ main#company-service > div:hover {
   header {
     padding: 1rem 1.5rem !important;
     font-size: 1.15rem !important;
+  }
+
+  header > div:first-child {
+    font-size: clamp(1.1rem, 5.2vw, 1.75rem) !important;
+    white-space: nowrap !important;
   }
 
   .mobile-controls,
@@ -184,22 +212,24 @@ main#company-service > div:hover {
     border-bottom: none !important;
   }
 
-  main#company-service {
+  .service-products-grid {
     grid-template-columns: 1fr !important;
     max-width: 520px !important;
     padding: 1rem 0 2.5rem !important;
   }
 
-  main#company-service > div {
+  .service-products-grid > div {
     padding: 1.5rem 1.25rem !important;
   }
 
   #company-info,
+  #company-faq,
   #company-qa {
     padding: 2rem 1.5rem !important;
   }
 
-  /* DX セクション モバイル対応 */
+  /* Web制作・DX セクション モバイル対応 */
+  #web-contents-create > div:last-child,
   #company-dx > div:last-child {
     padding: 4rem 1.5rem !important;
   }
