@@ -1362,5 +1362,25 @@ window.dispatchEvent(new Event('scroll'));
   - `aq_form.py.py` は `TECHNOSPACE/data/aq_form.py.py` へ移動完了
   - `TECHNOSPACE/public/` 配下に公開対象アセット一式（`index.html`, `robots.txt`, `sitemap.xml`, `llms.txt`, `static/css/index.css`, `static/js/index.js`, `static/img/` 全5画像 `dx_service.jpg`, `dx_service.svg`, `maluti.png`, `pc-printer.png`, `phone.png`）を完全同期出力済み
 
+---
+
+## 5. 営業時間・Web制作対応エリア変更＆QA検収結果（2026-11-18 完了）
+
+オーケストレータからのリファクタリング指示および確認回答に基づき、`coder-a` が改修・`public/` 同期を実施し、`gemini-target`（QAニキ）にて `public/` 直接配信・ルート配信双方の実ブラウザ検証を実施して **全項目 PASS（ブロッカー・エラー 0件）** を確認した。
+
+### 5.1 改修仕様・対象ファイル
+- **対象ファイル**: `index.html`, `llms.txt`, `public/index.html`, `public/llms.txt`
+- **営業時間変更**: `平日 9:00〜17:00` → **`平日 9:00〜18:00`**（JSON-LD `openingHoursSpecification.closes: "18:00"`）
+- **Web制作事業対応エリア変更**: **`福岡県全域・全国オンライン対応可`** へ更新（オフィス機器＝`北九州市内`、業務オートメーション・DX＝`全国オンライン対応可` を維持）
+  - `meta[name="description"]`（152文字）、JSON-LD `LocalBusiness.description` / `areaServed`（`City: 北九州市`, `AdministrativeArea: 福岡県`, `Country: JP`）、`Web制作・HPサイト・LPサイト` の `Service.areaServed`（`AdministrativeArea: 福岡県`, `Country: JP`）、JSON-LD `FAQPage` ↔ DOM `#company-faq` ↔ `llms.txt` を同期更新
+  - なお、会社概要 `<dl id="company-info">` の「対応エリア」行はユーザー要望により `福岡県内（Web制作・DX自動化は全国オンライン対応可）` に更新済み（`index.html`, `public/index.html` 同期）
+
+### 5.2 QA検証結果（`gemini-target` 報告サマリ）
+- **静的・同期・取り残し検証**: `17:00` 残存 0件、`public/` 全11ファイルのルート一致確認（テキストは CRLF/LF 差異のみ、`llms.txt` / `robots.txt` / `sitemap.xml` / 5画像は SHA-256 一致）、JSON-LD `FAQPage`・DOM `#company-faq`・`llms.txt` FAQ 4問完全一致
+- **Playwright 実ブラウザ検証（`public/`・ルート双方 / `chromium_headless_shell-1208`）**:
+  - Desktop (`1440x900`) / Mobile (`375x812`) ともに Console Error `0` / Page Error `0` / HTTP Error (`>=400`) `0`（製品画像3枚 `naturalWidth=420`、横溢れなし `scrollWidth === innerWidth`）
+  - ヘッダー社名：`Desktop 43.2px`、`Mobile 19.5px`（1行収容、`#menu-toggle` との余白 `49.21875px`）の非回帰確認
+  - `<dl id="company-info">` 全7行・`#company-faq` 全4問ともに適切に折り返されコンテナ内収容・溢れなしを確認（`<dl>` 対応エリア行調整後の最終版でも `Desktop` 1行表示・`Mobile` `ddHeight=88.171875px` 3行折り返し・`ddScrollOverflow=false` を Playwright スモークにて確認済み）
+
 
 
